@@ -1,0 +1,24 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: #f4f4f4;
+    font-family: Lato;
+    font-size: 12px !important;
+    text-transform: capitalize;
+    
+}
+.category{
+    color:#e6abe8;
+    
+  }
+  .title:hover{
+    color:#e6abe8;
+    cursor:pointer;
+  }
+  .date{
+    color:#8e8e8e;
+  }
+
+*{
+    box-sizing: border-box;
+}

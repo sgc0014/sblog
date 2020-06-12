@@ -1,0 +1,13 @@
+.singlePostContainer{
+    max-width: 360px;
+    background: #fff;
+    text-align: center;
+}
+
+.singlePostImg{
+    width: 100%;
+}
+
+.postBody{
+    padding:20px
+}
