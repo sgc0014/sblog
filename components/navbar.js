@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/navbar.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
-import {faInstagramSquare,faFacebookSquare} from '@fortawesome/free-brands-svg-icons'
+import Link from 'next/link'
+
 
 function Navbar() {
   const [toggle, setToggle] = useState(true);
@@ -24,7 +21,7 @@ function Navbar() {
         </div>
 
         <ul className={toggle === true ? "navbarItems" : "navbarItems open"}>
-          <li className={styles.navbarItem}>Home</li>
+          <li className={styles.navbarItem}><Link href='/post/single-post'><a>Home </a></Link> </li>
           <li className={styles.navbarItem}>Shop</li>
           <li className={styles.navbarItem}>About</li>
           <li className={styles.navbarItem}>Latest</li>
@@ -33,7 +30,7 @@ function Navbar() {
         </ul>
 
         <ul className={styles.socialLinks}>
-          <li className={styles.socialLink}>a</li>
+          <li className={styles.socialLink}>A</li>
           <li className={styles.socialLink}>b</li>
           <li className={styles.socialLink}>c</li>
         </ul>

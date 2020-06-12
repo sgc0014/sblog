@@ -2,6 +2,7 @@ import React from "react";
 
 export default function TopCategory() {
   return (
+    // Category with picture
     <div className="topCategoryContainer">
       <div className="container">
         <div className="categoryItem">

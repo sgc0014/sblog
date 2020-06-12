@@ -3,20 +3,30 @@ body{
     margin: 0;
     background: #f4f4f4;
     font-family: Lato;
-    font-size: 12px !important;
-    text-transform: capitalize;
+   
     
 }
 .category{
-    color:#e6abe8;
+    color:#e361e8;
+    text-transform: capitalize;
+    font-size: 12px;
     
   }
+  .title{
+    font-size: 30px;
+    text-transform: capitalize;
+  }
+
+  .title-sm{
+    font-size: 18px;
+  }
   .title:hover{
-    color:#e6abe8;
+    color:#e361e8;
     cursor:pointer;
   }
   .date{
     color:#8e8e8e;
+    font-size: 12px;
   }
 
 *{

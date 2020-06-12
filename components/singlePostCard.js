@@ -1,8 +1,8 @@
 import React from "react";
-import Button from "./button";
-import styles from "../styles/singlePost.module.css";
+import Button from "./index/button";
+import styles from "../styles/singlePostCard.module.css";
 
-export default function SinglePost() {
+export default function SinglePostCard() {
   return (
     <div className={styles.singlePostContainer}>
       <div className={styles.spImgContainer}>
