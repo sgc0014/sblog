@@ -14,7 +14,7 @@ export default function PopularPosts(){
                 src="/images/img1.jpg"
               />
               <div className={'popularSinglePostContent'}>
-                <a className=' popularPostTitle'>
+                <a href='/post/single-post' className=' popularPostTitle'>
                   Something to do somewhere.
                 </a>
                 <p className="date">March 24</p>
@@ -26,7 +26,7 @@ export default function PopularPosts(){
                 src="/images/img1.jpg"
               />
               <div className={'popularSinglePostContent'}>
-                <a className='popularPostTitle'>
+                <a className='popularPostTitle'  href='/post/single-post' >
                   Something to do somewhere.
                 </a>
                 <p className="date">March 24</p>
@@ -38,7 +38,7 @@ export default function PopularPosts(){
                 src="/images/img1.jpg"
               />
               <div className={'popularSinglePostContent'}>
-                <a className='popularPostTitle'>
+                <a className='popularPostTitle'  href='/post/single-post'>
                   Something to do somewhere.
                 </a>
                 <p className="date">March 24</p>
@@ -50,7 +50,7 @@ export default function PopularPosts(){
                 src="/images/img1.jpg"
               />
               <div className={'popularSinglePostContent'}>
-                <a className='popularPostTitle'>
+                <a className='popularPostTitle'  href='/post/single-post'>
                   Something to do somewhere.
                 </a>
                 <p className="date">March 24</p>
@@ -68,6 +68,13 @@ export default function PopularPosts(){
           .popularSinglePost{
             display: flex;
             margin: 20px 0px;
+          }
+          .popularPostTitle{
+            font-size:15px;
+            cursor:pointer;
+          }
+          .popularPostTitle:hover{
+            color:#e361e8
           }
           .popularSinglePostImg{
             width: 120px;

@@ -1,6 +1,10 @@
 import React from "react";
 import Layout from "../../components/layout";
 import styles from "../../styles/singlePost.module.css";
+import { FaFacebookF, FaPinterest } from "react-icons/fa";
+import { AiOutlineTwitter } from "react-icons/ai";
+import AuthorSection from "../../components/single-post/authorSection";
+import SuggestionPosts from "../../components/single-post/suggestionPosts";
 
 export default function SinglePost() {
   return (
@@ -61,135 +65,162 @@ export default function SinglePost() {
               </p>
               <div className={styles.hl}></div>
               {/* Share social icons */}
-              <div className={styles.socialIcons}>
+              <div className="socialIcons">
                 <p>Share</p>
-                <a>f</a>
-                <a>t</a>
-                <a>p</a>
+                <a className="socialIcon">
+                  <FaFacebookF />
+                </a>
+                <a className="socialIcon">
+                  <AiOutlineTwitter />
+                </a>
+                <a className="socialIcon">
+                  <FaPinterest />
+                </a>
               </div>
             </div>
           </div>
         </div>
-
         {/* Author Section */}
-
-        <div className="authorCardContainer">
-          <img className="authorImg" src="/images/person/author.jpg" />
-          <div className="authorInfo">
-            <a className="authorName">Carly Roy</a>
-            <p className={styles.bodyText}>
-              {" "}
-              Suspendisse sodales erat est, vitae maximus ligula eleifend vitae.
-              Praesent fringilla, urna eget tincid unt vehicula, urna diam
-              convallis dui, ut tincidunt mi tellus sit amet ante.
-            </p>
-            <p>
-              <a>f</a>
-              <a>t</a>
-            </p>
-          </div>
-        </div>
+    <AuthorSection/>
+     
         {/* Suggestion Section */}
-
-        <div className="suggestionCardContainer">
-        <h3 className="suggestionTitle">You Might Also Like</h3>
-          <ul className="suggestionPostList">
-            <li className="suggestionPost">
-              <img src="/images/posts/img1.jpg" />
-              <div className="suggestionPostBody">
-                <p className="category">Travel</p>
-                <h1 className="title-sm">Places to visit in Nepal.</h1>
-                <p className="date">June 6, 2020.</p>
-              </div>
-            </li>
-            <li className="suggestionPost">
-              <img src="/images/posts/img1.jpg" />
-              <div className="suggestionPostBody">
-                <p className="category">Travel</p>
-                <h1 className="title-sm">Places to visit in Nepal.</h1>
-                <p className="date">June 6, 2020.</p>
-              </div>
-            </li>
-            <li className="suggestionPost">
-               
-              <img src="/images/posts/img1.jpg" />
-              <div className="suggestionPostBody">
-                <p className="category">Travel</p>
-                <h1 className="title-sm">Places to visit in Nepal.</h1>
-                <p className="date">June 6, 2020.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
+    <SuggestionPosts/>
 
         {/* Comment Section */}
-
-
+        <div className="postCommentContainer">
+          <h4 className="postCardTitle">Comments</h4>
+          <div className="postCommentsContainer">
+            <ul className="postCommentsList">
+              <li className="postComment">
+                <img className="userImg" src="/images/person/user.jpg" />
+                <div className="commentTextPart">
+                  <p className="userName">Sam</p>
+                  <p className="date">March 20, 2020</p>
+                  <p className="bodyText">
+                    {" "}
+                    Suspendisse sodales erat est, vitae maximus ligula eleifend
+                    vitae. Praesent fringilla, urna eget tincid unt vehicula,
+                    urna diam convallis dui, ut tincidunt mi tellus sit amet
+                    ante.
+                  </p>
+                  <a className="commentReply">Reply</a>
+                </div>
+              </li>
+              <li className="postComment">
+                <img className="userImg" src="/images/person/user.jpg" />
+                <div className="commentTextPart">
+                  <p className="userName">Sam</p>
+                  <p className="date">March 20, 2020</p>
+                  <p className="bodyText">
+                    {" "}
+                    Suspendisse sodales erat est, vitae maximus ligula eleifend
+                    vitae. Praesent fringilla, urna eget tincid unt vehicula,
+                    urna diam convallis dui, ut tincidunt mi tellus sit amet
+                    ante.
+                  </p>
+                  <a className="commentReply">Reply</a>
+                </div>
+              </li>
+              <li className="postComment">
+                <img className="userImg" src="/images/person/user.jpg" />
+                <div className="commentTextPart">
+                  <p className="userName">Sam</p>
+                  <p className="date">March 20, 2020</p>
+                  <p className="bodyText">
+                    {" "}
+                    Suspendisse sodales erat est, vitae maximus ligula eleifend
+                    vitae. Praesent fringilla, urna eget tincid unt vehicula,
+                    urna diam convallis dui, ut tincidunt mi tellus sit amet
+                    ante.
+                  </p>
+                  <a className="commentReply">Reply</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="commentFormContainer">
+            <h4 className="postCardTitle">Leave A Reply</h4>
+            <form className="replyForm">
+              <input type="text" className="name" placeholder="Name" />
+              <input type="email" className="name" placeholder="Email" />
+              <textarea />
+            </form>
+            <button className="submit">Post Comment</button>
+          </div>
+        </div>
       </div>
       <style jsx>
         {`
-          .authorCardContainer {
-            display: flex;
-            padding: 18px 11px;
+     
+        
+          .postCommentContainer {
+            margin: 35px 0;
             background: #ffff;
-            margin-top: 35px;
+            padding: 25px 30px;
           }
-          .authorImg {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-right: 20px;
+          .postCommentContainer > h4 {
+            text-align: center;
           }
-
-          .authorName {
-            font-weight: 800;
+          .postCommentsList {
+            padding: 0;
           }
-          .suggestionCardContainer{
-              background:#ffff;
-              padding: 32px 10px;
-              margin-top:35px;
-              text-align: center;
-          }
-          .suggestionTitle{
-              font-weight:400;
-          }
-          .suggestionPostList {
-            display: flex;
+          .postComment {
             list-style: none;
+            display: flex;
+            border-bottom: 1px solid #e6e6e6;
+            margin-bottom: 30px;
           }
-
-          .suggestionPost {
-            width: 33.33333%;
-            padding: 0 12px;
+          .commentTextPart {
+            position: relative;
+            top: -20px;
           }
-         
-          .suggestionPost > img {
-            width: 100%;
+          .commentReply {
+            position: absolute;
+            top: 15px;
+            right: 50px;
+            color: #8e8e8e;
+            font-size: 12px;
           }
-          @media screen and (max-width: 650px){
-              .suggestionPostList{
-                  flex-direction:column;
-                  padding:0;
-              }
-              .suggestionPost{
-                  width:100%;
-                 
-              }
-              .bodyText{
-                  font-size:13px;
-              }
+          .replyForm {
+            display: flex;
+            flex-direction: column;
+          }
+          textarea {
+            height: 124px;
+          }
+          .replyForm > input,
+          textarea {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #e1e0e0;
+          }
+          .submit {
+            padding: 14px 34px;
+            margin-top: 30px;
+            background: black;
+            color: #ffff;
+            border: none;
+            transition: ease-in 0.5s all;
+          }
+          .submit:hover {
+            background: #e67272;
+            cursor: pointer;
+          }
+          @media screen and (max-width: 650px) {
+           
+            .bodyText {
+              font-size: 13px;
+            }
           }
           @media screen and (max-width: 460px) {
-            .authorCardContainer {
-              flex-direction: column;
-              text-align: center;
+      
+            .userImg {
+              width: 60px;
+              height:60px;
             }
-            .authorImg {
-              margin-right: 0;
-              align-self: center;
-            }
-            .authorInfo {
-              padding: 11px 0;
+            .commentReply {
+              top: 19px;
+              right: 39px;
             }
           }
         `}

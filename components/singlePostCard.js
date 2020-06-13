@@ -6,17 +6,23 @@ export default function SinglePostCard() {
   return (
     <div className={styles.singlePostContainer}>
       <div className={styles.spImgContainer}>
-        <img
-          className={styles.singlePostImg}
-          src="/images/img2.jpg"
-        />
+        <a className="title" href="/post/single-post">
+          {" "}
+          <img className={styles.singlePostImg} src="/images/img2.jpg" />
+        </a>
       </div>
       <div className={styles.postBody}>
         <p className="category">Travel</p>
-        <h1 className="title">Places to visit in Nepal.</h1>
+        <a className="title" href="/post/single-post">
+          {" "}
+          <h1 className="title">Places to visit in Nepal.</h1>
+        </a>
         <p className="date">June 6, 2020.</p>
-    
-      <Button />
+
+        <a className="title" href="/post/single-post">
+          {" "}
+          <Button />
+        </a>
       </div>
       <style jsx>{`
       @media screen and (max-width:1200px){

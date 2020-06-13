@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Button from "./button";
+import Link from "next/link";
 
 export default function Featured() {
   const [index, setIndex] = useState(0);
@@ -59,10 +60,10 @@ export default function Featured() {
         }}/>
       </span>
       <div className="imagecontainer">
-        <img className="imageSlide " src={featuredPostArr[index].src}></img>
+      <a  className="title" href='/post/single-post'> <img className="imageSlide " src={featuredPostArr[index].src}/></a>
         <div className="infocard">
           <p className="category">{featuredPostArr[index].category}</p>
-          <h1 className="title">{featuredPostArr[index].title}</h1>
+         <h1> <a  className="title" href='/post/single-post'>  {featuredPostArr[index].title}</a></h1>
           <p className="date">{featuredPostArr[index].createdAt}</p>
           <Button />
         </div>
@@ -107,6 +108,14 @@ export default function Featured() {
           position: absolute;
           top: 50%;
           left: 90%;
+        }
+        .plusSlide>:hover{
+          background:#ffff;
+          color:black;
+        }
+        .minusSlide>:hover{
+          background:#ffff;
+          color:black;
         }
 
         .infocard {

@@ -16,13 +16,15 @@
 .navbarItem {
   padding: 10px 20px;
   cursor: pointer;
+  font-size: 15px;
   
 }
 .navbarItem>a{
   text-decoration: none;
   color: black;
+  text-transform: capitalize;
 }
-.socialLink:hover, .navbarItem:hover{
+.socialLink:hover, .navbarItem>a:hover{
     color: #e6abe8;
     transition: all 0.3s ease-in;
 }

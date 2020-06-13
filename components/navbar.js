@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styles from "../styles/navbar.module.css";
-import Link from 'next/link'
-
+import Link from "next/link";
+import { FaFacebookF, FaPinterest } from "react-icons/fa";
+import { AiOutlineTwitter } from "react-icons/ai";
 
 function Navbar() {
   const [toggle, setToggle] = useState(true);
@@ -9,7 +10,7 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.container}>
-      <div
+        <div
           className={styles.burger}
           onClick={() => {
             setToggle(!toggle);
@@ -21,21 +22,54 @@ function Navbar() {
         </div>
 
         <ul className={toggle === true ? "navbarItems" : "navbarItems open"}>
-          <li className={styles.navbarItem}><Link href='/post/single-post'><a>Home </a></Link> </li>
-          <li className={styles.navbarItem}>Shop</li>
-          <li className={styles.navbarItem}>About</li>
-          <li className={styles.navbarItem}>Latest</li>
-          <li className={styles.navbarItem}>Blog</li>
-          <li className={styles.navbarItem}>Contact</li>
+          <li className={styles.navbarItem}>
+            <Link href="/">
+              <a>Home </a>
+            </Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/">
+              <a>Travel</a>
+            </Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/">
+              <a>Health</a>
+            </Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/">
+              <a>Food</a>
+            </Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/">
+              <a>Lifestyle</a>
+            </Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/about-me">
+              <a>About me</a>
+            </Link>
+          </li>
+          <li className={styles.navbarItem}>
+            <Link href="/contact">
+              <a>Contact </a>
+            </Link>
+          </li>
         </ul>
 
-        <ul className={styles.socialLinks}>
-          <li className={styles.socialLink}>A</li>
-          <li className={styles.socialLink}>b</li>
-          <li className={styles.socialLink}>c</li>
-        </ul>
-
-     
+        <div className="socialIcons">
+          <a className="socialIcon">
+            <FaFacebookF />
+          </a>
+          <a className="socialIcon">
+            <AiOutlineTwitter />
+          </a>
+          <a className="socialIcon">
+            <FaPinterest />
+          </a>
+        </div>
       </div>
 
       <style jsx>
@@ -56,14 +90,13 @@ function Navbar() {
               top: 54px;
               left: 0;
               padding: 0;
-             transition: all 0.5s ease-in;
-             height:0;
-             overflow:hidden
-            
+              transition: all 0.5s ease-in;
+              height: 0;
+              overflow: hidden;
             }
             .open {
               display: flex;
-              height:240px
+              height: 240px;
             }
           }
         `}
