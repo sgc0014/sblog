@@ -87,16 +87,19 @@ function Navbar() {
               text-align: center;
               flex-direction: column;
               position: absolute;
-              top: 54px;
+              top: 35px;
               left: 0;
               padding: 0;
               transition: all 0.5s ease-in;
               height: 0;
               overflow: hidden;
+              z-index:9999;
+              
             }
             .open {
               display: flex;
-              height: 240px;
+              height: 275px;
+              box-shadow: 45px 5px 8px gray;
             }
           }
         `}

@@ -11,8 +11,10 @@ body{
     color:#e361e8;
     text-transform: capitalize;
     font-size: 12px;
-  
-    
+
+  }
+  .categoryName{
+    font-size: 13px;
   }
   .title{
     font-size: 30px;
@@ -49,6 +51,7 @@ body{
     letter-spacing: 1px;
     text-transform: uppercase;
     align-self: center;
+    padding: 16px 0;
   }
   .socialIcon{
     font-size: 16px;

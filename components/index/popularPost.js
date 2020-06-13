@@ -74,7 +74,7 @@ export default function PopularPosts(){
             cursor:pointer;
           }
           .popularPostTitle:hover{
-            color:#e361e8
+            color:#e361e8;
           }
           .popularSinglePostImg{
             width: 120px;

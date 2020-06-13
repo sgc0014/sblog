@@ -1,5 +1,7 @@
 .navbar {
   background: #ffff;
+  z-index: 9999;
+  
 }
 
 .container {
@@ -11,6 +13,7 @@
 .navbarItems {
   display: flex;
   list-style: none;
+  z-index: 9999;
 }
 
 .navbarItem {
