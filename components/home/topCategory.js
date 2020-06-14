@@ -13,7 +13,7 @@ export default function TopCategory() {
             </div>
           </div>
         </div>
-
+{/* Category Items */}
         <div className="categoryItem">
           <div className="img-cover">
             <img className="categoryImg" src="/images/category/Food.jpg" />
@@ -48,7 +48,7 @@ export default function TopCategory() {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
           text-align: center;
-          padding: 100px 0px;
+          padding: 80px 0px;
         }
 
         .categoryItem {
@@ -84,8 +84,9 @@ export default function TopCategory() {
                 flex-direction:column;
                 
             }
-            .category{
-                margin-bottom: 40px
+        
+            .categoryItem{
+              margin-bottom:26px;
             }
             .categoryImg {
                 width: 172px;

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import {FaFacebookF, FaPinterest} from 'react-icons/fa'
 import {AiOutlineTwitter} from 'react-icons/ai'
 

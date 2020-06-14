@@ -1,16 +1,18 @@
+*{
+  box-sizing: border-box;
+}
+
 body{
     padding: 0;
     margin: 0;
     background: #f4f4f4;
     font-family: Lato;
-    letter-spacing: 0.5px;
-   
-    
+    letter-spacing: 0.5px; 
 }
 .category{
     color:#e361e8;
     text-transform: capitalize;
-    font-size: 12px;
+    font-size: 11px;
 
   }
   .categoryName{
@@ -30,7 +32,7 @@ body{
   }
   .date{
     color:#8e8e8e;
-    font-size: 12px;
+    font-size: 10px;
   }
   .bodyText{
     font-size: 14px;
@@ -66,7 +68,131 @@ body{
       margin-right: 20px;
     
   }
+  /* Button */
+  .submit {
+    padding: 14px 34px;
+    margin-top: 30px;
+    background: black;
+    color: #ffff;
+    border: none;
+    transition: ease-in 0.5s all;
+  }
+  .submit:hover {
+    background: #e67272;
+    cursor: pointer;
+  }
+  .readMorebtn {
+    background: #ffff;
+    border: 1px solid #e6abe8;
+    padding: 16px 28px;
+    cursor: pointer;
+    margin: 10px;
+  }
 
-*{
-    box-sizing: border-box;
+  .readMorebtn:hover {
+    background: #e6abe8;
+    color: #ffff;
+    transition: 0.7s;
+  }
+  @media screen and (max-width: 390px) {
+  .readMorebtn{
+    padding: 9px 28px ;
+  }
 }
+
+  /* Main content area */
+  
+.mainContentContainer{
+  display: flex;
+  justify-content: space-around;
+  padding:50px
+}
+
+.leftSide{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 40px;
+  grid-column-gap: 18px;
+  width: 66%;
+}
+
+
+
+.rightTitleContainer{
+  background: #ffff;
+  padding: 1px;
+  box-shadow: 1px 1px 3px #cacaca;
+  margin-bottom: 45px;
+}
+
+.rightTitle{
+  font-weight: 400;
+  text-align: center;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  font-size: 15px;
+
+
+
+}
+
+.categoryList{
+  list-style: none;
+  padding:0;
+}
+
+.categoryItem{
+  font-size: 13px;
+  letter-spacing:0.7px;
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+
+    .date{
+        font-size:11px;
+    }  
+    .rightSide{
+      width: 37%;
+      padding: 0 20px;
+  }
+  @media screen and (max-width:990px){
+      .rightSide{
+        width:38%;
+      }
+      .leftSide{
+        width: 70%;
+       
+      }
+      
+      }
+
+      @media screen and (max-width:820px){
+        .mainContentContainer{
+          flex-direction:column;
+          align-items:center;
+
+        }
+        .leftSide{
+          width:100%;
+        }
+        .rightSide{
+          width:60%;
+          margin:70px auto;
+        }
+      }
+      @media screen and (max-width:600px){
+        .leftSide{
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+        }
+        .rightSide{
+          width:73%;
+          
+        }
+      }
+   
+
+

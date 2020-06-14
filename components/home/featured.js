@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import Button from "./button";
+import Button from "./readMoreButton";
 import Link from "next/link";
 
 export default function Featured() {
@@ -55,17 +55,17 @@ export default function Featured() {
          style={{
           border: "1px solid white",
           borderRadius: "50%",
-          fontSize: "37px",
+          fontSize: "30px",
           cursor: "pointer",
         }}/>
       </span>
       <div className="imagecontainer">
-      <a  className="title" href='/post/single-post'> <img className="imageSlide " src={featuredPostArr[index].src}/></a>
+      <a  href='/post/single-post'> <img className="imageSlide " src={featuredPostArr[index].src}/></a>
         <div className="infocard">
           <p className="category">{featuredPostArr[index].category}</p>
-         <h1> <a  className="title" href='/post/single-post'>  {featuredPostArr[index].title}</a></h1>
+         <h1 className='featuredTitle'> <a  href='/post/single-post'>  {featuredPostArr[index].title}</a></h1>
           <p className="date">{featuredPostArr[index].createdAt}</p>
-          <Button />
+         <button className='readMorebtn'>Read More</button>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ export default function Featured() {
           style={{
             border: "1px solid white",
             borderRadius: "50%",
-            fontSize: "37px",
+            fontSize: "30px",
             cursor: "pointer",
           }}
         />
@@ -132,7 +132,7 @@ export default function Featured() {
           .infocard {
             padding: 40px 40px 32px;
           }
-          .title {
+          .featuredTitle{
             font-size: 31px;
           }
         }
@@ -140,7 +140,7 @@ export default function Featured() {
           .infocard {
             padding: 40px 32px 28px;
           }
-          .title {
+          .featuredTitle {
             font-size: 25px;
           }
         }
@@ -148,7 +148,7 @@ export default function Featured() {
           .infocard {
             padding: 30px 7px 12px;
           }
-          .title {
+          .featuredTitle{
             font-size: 15px;
           }
         }
@@ -156,7 +156,7 @@ export default function Featured() {
           .infocard {
             padding: 27px 5px 15px;
           }
-          .title {
+          .featuredTitle{
             font-size: 15px;
           }
           .date {
@@ -171,7 +171,7 @@ export default function Featured() {
           .infocard {
             padding: 0px 5px 4px;
           }
-          .title {
+          .featuredTitle {
             font-size: 15px;
           }
           .date {
@@ -183,14 +183,17 @@ export default function Featured() {
           }
         }
         @media screen and (max-width: 390px) {
-          .infocard {
-            padding: 0px 5px 4px;
-            width: 207px;
-            left: 20%;
-            right: 20%;
+          .infocard{
+            padding: 0px;
+            width: 260px;
+            left: 10%;
+            height: 164px;
           }
-          .title {
+          .featuredTitle{
             font-size: 15px;
+            margin: 0;
+            margin-top:14px;
+           
           }
           .date {
             font-size: 12px;
@@ -198,6 +201,19 @@ export default function Featured() {
 
           .category {
             font-size: 13px;
+            margin:0;
+            margin-top:8px;
+          }
+          .minusSlide {
+            position: absolute;
+            top: 54%;
+            right: 90%;
+          }
+  
+          .plusSlide {
+            position: absolute;
+            top: 50%;
+            left: 91%;
           }
         }
       `}</style>

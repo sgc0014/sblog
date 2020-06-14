@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 
 function Contact(props) {
   return (
@@ -58,18 +58,7 @@ function Contact(props) {
             margin-bottom: 15px;
             border: 1px solid #e1e0e0;
           }
-          .submit {
-            padding: 14px 34px;
-            margin-top: 30px;
-            background: black;
-            color: #ffff;
-            border: none;
-            transition: ease-in 0.5s all;
-          }
-          .submit:hover {
-            background: #e67272;
-            cursor: pointer;
-          }
+       
         `}
       </style>
     </Layout>

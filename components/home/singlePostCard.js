@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./index/button";
-import styles from "../styles/singlePostCard.module.css";
+import Button from "./readMoreButton";
+import styles from "../../styles/singlePostCard.module.css";
 
 export default function SinglePostCard() {
   return (

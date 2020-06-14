@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import styles from "../styles/index.module.css";
-import Featured from "../components/index/featured";
-import SinglePost from "../components/singlePostCard";
-import IndexContent from "../components/index/indexContent";
+import Featured from "../components/home/featured";
+import IndexContent from "../components/home/indexContent";
 
 export default function Home() {
   return (

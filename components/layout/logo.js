@@ -10,14 +10,13 @@ export default function Logo() {
           font-family: Arizonia-Regular;
           src: url("/fonts/Arizonia-Regular.ttf");
         }
-        .logoContainer{
-            text-Align:center
+        .logoContainer {
+          text-align: center;
         }
-        .logo{
-            font-family:Arizonia;
-            font-size:60px;
+        .logo {
+          font-family: Arizonia;
+          font-size: 60px;
         }
-
       `}</style>
     </div>
   );

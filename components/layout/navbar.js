@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/navbar.module.css";
+import styles from "../../styles/navbar.module.css";
 import Link from "next/link";
 import { FaFacebookF, FaPinterest } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
@@ -10,6 +10,7 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.container}>
+        {/* Burger Toggler */}
         <div
           className={styles.burger}
           onClick={() => {
@@ -20,7 +21,7 @@ function Navbar() {
           <div className={styles.line}></div>
           <div className={styles.line}></div>
         </div>
-
+        {/* Nav-links */}
         <ul className={toggle === true ? "navbarItems" : "navbarItems open"}>
           <li className={styles.navbarItem}>
             <Link href="/">
@@ -28,7 +29,7 @@ function Navbar() {
             </Link>
           </li>
           <li className={styles.navbarItem}>
-            <Link href="/">
+            <Link href="/category/travel">
               <a>Travel</a>
             </Link>
           </li>
@@ -58,7 +59,7 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-
+        {/* Social-icons */}
         <div className="socialIcons">
           <a className="socialIcon">
             <FaFacebookF />
@@ -78,7 +79,7 @@ function Navbar() {
             display: flex;
             list-style: none;
           }
-
+// Responsive navbar
           @media screen and (max-width: 1020px) {
             .navbarItems {
               display: flex;
@@ -93,8 +94,7 @@ function Navbar() {
               transition: all 0.5s ease-in;
               height: 0;
               overflow: hidden;
-              z-index:9999;
-              
+              z-index: 9999;
             }
             .open {
               display: flex;

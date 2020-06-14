@@ -10,9 +10,7 @@
   background: #ffff;
   letter-spacing: 0.5px;
 }
-.postTitle{
-    text-transform: capitalize;
-}
+
 .postHeader {
   padding: 30px 0;
 }

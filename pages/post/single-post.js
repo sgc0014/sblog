@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/layout";
+import Layout from "../../components/layout/layout";
 import styles from "../../styles/singlePost.module.css";
 import { FaFacebookF, FaPinterest } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
@@ -18,7 +18,7 @@ export default function SinglePost() {
           <div className={styles.singlePostText}>
             <div className={styles.postHeader}>
               <p className="category">Travel</p>
-              <h1 className={styles.postTitle}>Holy heavens in Earth</h1>
+              <h1 >Holy heavens in Earth</h1>
               <p className="date">March 20, 2020</p>
             </div>
             <div className={styles.postContent}>
@@ -194,18 +194,7 @@ export default function SinglePost() {
             margin-bottom: 15px;
             border: 1px solid #e1e0e0;
           }
-          .submit {
-            padding: 14px 34px;
-            margin-top: 30px;
-            background: black;
-            color: #ffff;
-            border: none;
-            transition: ease-in 0.5s all;
-          }
-          .submit:hover {
-            background: #e67272;
-            cursor: pointer;
-          }
+
           @media screen and (max-width: 650px) {
            
             .bodyText {

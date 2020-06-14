@@ -1,0 +1,15 @@
+.singlePostWide{
+    max-width: 650px;
+    background: #ffff;
+    display: flex;
+}
+.spImgContainer{
+    width: 40%;
+}
+.singlePostWideImg{
+    width: 100%;
+}
+.postBody{
+    text-align: center;
+    margin: 0 auto;
+}
