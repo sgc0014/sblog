@@ -10,10 +10,10 @@ export default function IndexContent() {
       <TopCategory />
       <div className={"mainContentContainer"}>
         <div className={"leftSide"}>
-          <SinglePost />
-          <SinglePost />
-          <SinglePost />
-          <SinglePost />
+          <SinglePost title={'Tips to save money in airways.'} images={'/images/posts/travel3.jpg'}/>
+          <SinglePost title={'I went on a yacht trip.'} images={'/images/posts/travel4.jpg'}/>
+          <SinglePost title={'Minimizing heart diseases with jogging.'} images={'/images/posts/health1.jpg'}/>
+          <SinglePost  title={'Are Vitamins suplement worth it?'} images={'/images/posts/health2.jpg'}/>
         </div>
 
         <div className={"rightSide"}>

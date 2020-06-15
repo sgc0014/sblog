@@ -6,7 +6,7 @@ function SuggestionPosts(props) {
         <h3 className="postCardTitle">You Might Also Like</h3>
         <ul className="suggestionPostList">
           <li className="suggestionPost">
-            <img src="/images/posts/img1.jpg" />
+            <img src="/images/posts/travel1.jpg" />
             <div className="suggestionPostBody">
               <p className="category">Travel</p>
               <h1 className="title-sm">Places to visit in Nepal.</h1>
@@ -14,18 +14,18 @@ function SuggestionPosts(props) {
             </div>
           </li>
           <li className="suggestionPost">
-            <img src="/images/posts/img1.jpg" />
+            <img src="/images/posts/food2.jpg" />
             <div className="suggestionPostBody">
-              <p className="category">Travel</p>
-              <h1 className="title-sm">Places to visit in Nepal.</h1>
+              <p className="category">Food</p>
+              <h1 className="title-sm">Quick Food to prepare during quarantine.</h1>
               <p className="date">June 6, 2020.</p>
             </div>
           </li>
           <li className="suggestionPost">
-            <img src="/images/posts/img1.jpg" />
+            <img src="/images/posts/health2.jpg" />
             <div className="suggestionPostBody">
-              <p className="category">Travel</p>
-              <h1 className="title-sm">Places to visit in Nepal.</h1>
+              <p className="category">Health</p>
+              <h1 className="title-sm">Vaccine research for COVID 19.</h1>
               <p className="date">June 6, 2020.</p>
             </div>
           </li>

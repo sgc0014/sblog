@@ -1,15 +1,21 @@
 .singlePostWide{
-    max-width: 650px;
+    max-width: 100%;
     background: #ffff;
     display: flex;
+    max-height: 165px;
+    margin-bottom: 20px;
+    
 }
 .spImgContainer{
     width: 40%;
 }
 .singlePostWideImg{
     width: 100%;
+    height: 100%;
 }
 .postBody{
     text-align: center;
     margin: 0 auto;
+    padding: 20px 6px;
 }
+

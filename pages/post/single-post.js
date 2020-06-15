@@ -13,7 +13,7 @@ export default function SinglePost() {
       <div className={styles.container}>
         <div className={styles.singlePostContainer}>
           <div className={styles.singlePostImgContainer}>
-            <img className={styles.singlePostImg} src="/images/img2.jpg" />
+            <img className={styles.singlePostImg} src="/images/posts/travel2.jpg" />
           </div>
           <div className={styles.singlePostText}>
             <div className={styles.postHeader}>
@@ -107,9 +107,9 @@ export default function SinglePost() {
                 </div>
               </li>
               <li className="postComment">
-                <img className="userImg" src="/images/person/user.jpg" />
+                <img className="userImg" src="/images/person/user2.jpg" />
                 <div className="commentTextPart">
-                  <p className="userName">Sam</p>
+                  <p className="userName">Riya</p>
                   <p className="date">March 20, 2020</p>
                   <p className="bodyText">
                     {" "}

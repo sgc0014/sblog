@@ -10,13 +10,13 @@ export default function Featured() {
       title: "Places to visit in Nepal.",
       category: "travel",
       createdAt: "June 6, 2020.",
-      src: "images/img1.jpg",
+      src: "images/posts/travel1.jpg",
     },
     {
       title: "Holy heavens in earth.",
       category: "travel",
       createdAt: "June 10, 2020.",
-      src: "images/img2.jpg",
+      src: "images/posts/travel2.jpg",
     },
   ]);
 

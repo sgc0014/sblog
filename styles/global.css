@@ -19,7 +19,7 @@ body{
     font-size: 13px;
   }
   .title{
-    font-size: 30px;
+    font-size: 24px;
     text-transform: capitalize;
   }
 
@@ -116,6 +116,11 @@ body{
   width: 66%;
 }
 
+.listStyleLeft{
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+}
 
 
 .rightTitleContainer{
@@ -154,7 +159,7 @@ body{
         font-size:11px;
     }  
     .rightSide{
-      width: 37%;
+      width: 30%;
       padding: 0 20px;
   }
   @media screen and (max-width:990px){
@@ -164,6 +169,9 @@ body{
       .leftSide{
         width: 70%;
        
+      }
+      .listStyleLeft{
+        width: 100%;
       }
       
       }
@@ -189,7 +197,7 @@ body{
           align-items:center;
         }
         .rightSide{
-          width:73%;
+          width:100%;
           
         }
       }
