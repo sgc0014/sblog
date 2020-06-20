@@ -20,6 +20,8 @@ export default function Featured() {
     },
   ]);
 
+// Image Slideshow
+
   const handleNext = () => {
     if (index >= featuredPostArr.length - 1) {
       setIndex(0);
@@ -47,8 +49,10 @@ export default function Featured() {
     , 5000);
     return () => clearTimeout(timer);
   });
+
   return (
     <div className="featured">
+      {/* Previous Button */}
       <span className="minusSlide ">
         {" "}
         <AiOutlineArrowLeft className="slider" onClick={handlePrev} 
@@ -59,6 +63,8 @@ export default function Featured() {
           cursor: "pointer",
         }}/>
       </span>
+
+      {/* Featured Post */}
       <div className="imagecontainer">
       <a  href='/post/single-post'> <img className="imageSlide " src={featuredPostArr[index].src}/></a>
         <div className="infocard">
@@ -68,6 +74,8 @@ export default function Featured() {
          <button className='readMorebtn'>Read More</button>
         </div>
       </div>
+
+      {/* Next Button */}
 
       <span className="plusSlide ">
         {" "}

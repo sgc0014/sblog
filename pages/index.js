@@ -14,12 +14,12 @@ export default function Home() {
 
       <main>
         <Layout>
-          <div className={styles.hero}>
-           
-          </div>
+          <div className={styles.hero}></div>
+          
           <Featured />
         
-          <IndexContent/>
+          <IndexContent />
+        
         </Layout>
       </main>
     </div>

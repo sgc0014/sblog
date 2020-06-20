@@ -58,7 +58,6 @@ function Contact(props) {
             margin-bottom: 15px;
             border: 1px solid #e1e0e0;
           }
-       
         `}
       </style>
     </Layout>
