@@ -16,7 +16,7 @@ export default function Home() {
         <Layout>
           <div className={styles.hero}></div>
           
-          <Featured />
+         
         
           <IndexContent />
         

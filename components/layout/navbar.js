@@ -6,11 +6,19 @@ import { AiOutlineTwitter } from "react-icons/ai";
 
 function Navbar() {
   const [toggle, setToggle] = useState(true);
+  const [categoryItems, setItems] = useState([
+    "travel",
+    "health",
+    "food",
+    "lifestyle",
+  ]);
 
   return (
     <div className={styles.navbar}>
       <div className={styles.container}>
+
         {/* Burger Toggler */}
+        
         <div
           className={styles.burger}
           onClick={() => {
@@ -21,33 +29,27 @@ function Navbar() {
           <div className={styles.line}></div>
           <div className={styles.line}></div>
         </div>
+
         {/* Nav-links */}
+
         <ul className={toggle === true ? "navbarItems" : "navbarItems open"}>
           <li className={styles.navbarItem}>
             <Link href="/">
               <a>Home </a>
             </Link>
           </li>
-          <li className={styles.navbarItem}>
-            <Link href="/category/travel">
-              <a>Travel</a>
-            </Link>
-          </li>
-          <li className={styles.navbarItem}>
-            <Link href="/">
-              <a>Health</a>
-            </Link>
-          </li>
-          <li className={styles.navbarItem}>
-            <Link href="/">
-              <a>Food</a>
-            </Link>
-          </li>
-          <li className={styles.navbarItem}>
-            <Link href="/">
-              <a>Lifestyle</a>
-            </Link>
-          </li>
+
+          {/* Category Items */}
+
+          {categoryItems.map((categoryItem) => (
+            <li className={styles.navbarItem}>
+              <Link href={`/category/${categoryItem}`}>
+                <a>{categoryItem}</a>
+              </Link>
+            </li>
+          ))}
+
+        
           <li className={styles.navbarItem}>
             <Link href="/about-me">
               <a>About me</a>
@@ -59,7 +61,9 @@ function Navbar() {
             </Link>
           </li>
         </ul>
+
         {/* Social-icons */}
+
         <div className="socialIcons">
           <a className="socialIcon">
             <FaFacebookF />
@@ -79,7 +83,7 @@ function Navbar() {
             display: flex;
             list-style: none;
           }
-// Responsive navbar
+          // Responsive navbar
           @media screen and (max-width: 1020px) {
             .navbarItems {
               display: flex;

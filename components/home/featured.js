@@ -2,8 +2,22 @@ import React, { useState, useEffect } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Button from "./readMoreButton";
 import Link from "next/link";
+import Axios from "axios";
 
-export default function Featured() {
+
+
+export async function getServerSideProps() {
+   
+  const data = await Axios.get('http://localhost:1337/posts');
+  const featuredPostArr1 = await data.json();
+
+  return {
+    props: {featuredPostArr1}
+  }
+}
+
+
+export default function Featured({featuredPostArr1}) {
   const [index, setIndex] = useState(0);
   const [featuredPostArr, addFeaturedPost] = useState([
     {
@@ -19,6 +33,7 @@ export default function Featured() {
       src: "images/posts/travel2.jpg",
     },
   ]);
+  
 
 // Image Slideshow
 
@@ -30,7 +45,7 @@ export default function Featured() {
     }
 
     setIndex(1);
-    console.log(featuredPostArr);
+    
   };
 
   const handlePrev = () => {
@@ -54,6 +69,7 @@ export default function Featured() {
     <div className="featured">
       {/* Previous Button */}
       <span className="minusSlide ">
+       
         {" "}
         <AiOutlineArrowLeft className="slider" onClick={handlePrev} 
          style={{
