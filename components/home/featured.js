@@ -1,93 +1,74 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import Button from "./readMoreButton";
-import Link from "next/link";
-import Axios from "axios";
+import dateFormatter from "../utils/dateFormatter";
 
-
-
-export async function getServerSideProps() {
-   
-  const data = await Axios.get('http://localhost:1337/posts');
-  const featuredPostArr1 = await data.json();
-
-  return {
-    props: {featuredPostArr1}
-  }
-}
-
-
-export default function Featured({featuredPostArr1}) {
+export default function Featured({ featuredPosts }) {
   const [index, setIndex] = useState(0);
-  const [featuredPostArr, addFeaturedPost] = useState([
-    {
-      title: "Places to visit in Nepal.",
-      category: "travel",
-      createdAt: "June 6, 2020.",
-      src: "images/posts/travel1.jpg",
-    },
-    {
-      title: "Holy heavens in earth.",
-      category: "travel",
-      createdAt: "June 10, 2020.",
-      src: "images/posts/travel2.jpg",
-    },
-  ]);
-  
 
-// Image Slideshow
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleNext();
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Image Slideshow
 
   const handleNext = () => {
-    if (index >= featuredPostArr.length - 1) {
+    if (index >= featuredPosts.length - 1) {
       setIndex(0);
 
       return;
     }
 
     setIndex(1);
-    
   };
 
   const handlePrev = () => {
     if (index <= 0) {
-      setIndex(featuredPostArr.length - 1);
+      setIndex(featuredPosts.length - 1);
 
       return;
     }
     setIndex(index - 1);
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      handleNext();
-    }
-    , 5000);
-    return () => clearTimeout(timer);
-  });
-
   return (
     <div className="featured">
       {/* Previous Button */}
       <span className="minusSlide ">
-       
         {" "}
-        <AiOutlineArrowLeft className="slider" onClick={handlePrev} 
-         style={{
-          border: "1px solid white",
-          borderRadius: "50%",
-          fontSize: "30px",
-          cursor: "pointer",
-        }}/>
+        <AiOutlineArrowLeft
+          className="slider"
+          onClick={handlePrev}
+          style={{
+            border: "1px solid white",
+            borderRadius: "50%",
+            fontSize: "30px",
+            cursor: "pointer",
+          }}
+        />
       </span>
 
       {/* Featured Post */}
       <div className="imagecontainer">
-      <a  href='/post/single-post'> <img className="imageSlide " src={featuredPostArr[index].src}/></a>
+        <a href="/post/single-post">
+          {" "}
+          <img
+            className="imageSlide "
+            src={`http://localhost:1337${featuredPosts[index].Coverimage[0].url}`}
+          />
+        </a>
         <div className="infocard">
-          <p className="category">{featuredPostArr[index].category}</p>
-         <h1 className='featuredTitle'> <a  href='/post/single-post'>  {featuredPostArr[index].title}</a></h1>
-          <p className="date">{featuredPostArr[index].createdAt}</p>
-         <button className='readMorebtn'>Read More</button>
+          <p className="category">{featuredPosts[0].category.Name}</p>
+          <h1 className="featuredTitle">
+            {" "}
+            <a href="/post/single-post"> {featuredPosts[index].Title}</a>
+          </h1>
+          <p className="date">
+            {dateFormatter(featuredPosts[index].created_at)}
+          </p>
+          <button className="readMorebtn">Read More</button>
         </div>
       </div>
 
@@ -118,9 +99,7 @@ export default function Featured({featuredPostArr1}) {
 
         .imageSlide {
           width: 100%;
-         
         }
-      
 
         .minusSlide {
           position: absolute;
@@ -133,13 +112,13 @@ export default function Featured({featuredPostArr1}) {
           top: 50%;
           left: 90%;
         }
-        .plusSlide>:hover{
-          background:#ffff;
-          color:black;
+        .plusSlide > :hover {
+          background: #ffff;
+          color: black;
         }
-        .minusSlide>:hover{
-          background:#ffff;
-          color:black;
+        .minusSlide > :hover {
+          background: #ffff;
+          color: black;
         }
 
         .infocard {
@@ -151,12 +130,12 @@ export default function Featured({featuredPostArr1}) {
           right: 29%;
           padding: 40px;
         }
-  
+
         @media screen and (max-width: 1200px) {
           .infocard {
             padding: 40px 40px 32px;
           }
-          .featuredTitle{
+          .featuredTitle {
             font-size: 31px;
           }
         }
@@ -172,7 +151,7 @@ export default function Featured({featuredPostArr1}) {
           .infocard {
             padding: 30px 7px 12px;
           }
-          .featuredTitle{
+          .featuredTitle {
             font-size: 15px;
           }
         }
@@ -180,7 +159,7 @@ export default function Featured({featuredPostArr1}) {
           .infocard {
             padding: 27px 5px 15px;
           }
-          .featuredTitle{
+          .featuredTitle {
             font-size: 15px;
           }
           .date {
@@ -207,17 +186,16 @@ export default function Featured({featuredPostArr1}) {
           }
         }
         @media screen and (max-width: 390px) {
-          .infocard{
+          .infocard {
             padding: 0px;
             width: 260px;
             left: 10%;
             height: 164px;
           }
-          .featuredTitle{
+          .featuredTitle {
             font-size: 15px;
             margin: 0;
-            margin-top:14px;
-           
+            margin-top: 14px;
           }
           .date {
             font-size: 12px;
@@ -225,15 +203,15 @@ export default function Featured({featuredPostArr1}) {
 
           .category {
             font-size: 13px;
-            margin:0;
-            margin-top:8px;
+            margin: 0;
+            margin-top: 8px;
           }
           .minusSlide {
             position: absolute;
             top: 54%;
             right: 90%;
           }
-  
+
           .plusSlide {
             position: absolute;
             top: 50%;

@@ -1,12 +1,20 @@
 import Head from "next/head";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/layout/layout";
-import styles from "../styles/index.module.css";
 import Featured from "../components/home/featured";
-import IndexContent from "../components/home/indexContent";
+import SinglePost from "../components/home/singlePostCard";
+import PopularPosts from "../components/popularPost";
+import TopCategory from "../components/home/topCategory";
+import Category from "../components/category";
+import Axios from "axios";
 
-export default function Home() {
+const Home = ({posts,featuredPosts}) => {
+ 
+ 
+
   return (
     <div className="bodyContainer">
+     {console.log(posts)}
       <Head>
         <title>S-blog</title>
         <link rel="icon" href="/favicon.ico" />
@@ -14,14 +22,52 @@ export default function Home() {
 
       <main>
         <Layout>
-          <div className={styles.hero}></div>
-          
-         
-        
-          <IndexContent />
-        
+          <div className="indexBody">
+            <Featured featuredPosts={featuredPosts} />
+
+            <TopCategory />
+            <div className={"mainContentContainer"}>
+              <div className={"leftSide"}>
+                {posts.length ? (
+                  posts.map((post) => (
+                    <SinglePost
+                      title={post.Title}
+                      image={post.Coverimage[0].url}
+                      category={post.category.Name}
+                      date={post.created_at}
+                    />
+                  ))
+                ) : (
+                  <div>Loading...</div>
+                )}
+              </div>
+
+              <div className={"rightSide"}>
+                <PopularPosts />
+
+                <Category />
+              </div>
+            </div>
+          </div>
         </Layout>
       </main>
     </div>
   );
+};
+
+export async function getServerSideProps() {
+  const data = await Axios.get("http://localhost:1337/posts");
+
+  const posts = data.data;
+  const featuredPosts = posts.filter((post) => post.featured === true);
+ 
+  return {
+    props: {
+      posts,
+      featuredPosts
+      
+    }
+  };
 }
+
+export default Home;

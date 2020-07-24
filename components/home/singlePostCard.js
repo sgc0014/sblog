@@ -1,15 +1,10 @@
 import React from "react";
 import Button from "./readMoreButton";
 import styles from "../../styles/singlePostCard.module.css";
-
+import dateFormatter from '../utils/dateFormatter'
 export default function SinglePostCard({ title, image, category, date }) {
   
-  //format date => 13 July,2020
-  const dateFormatter = new Intl.DateTimeFormat("en-GB", {
-    year: "numeric",
-    month: "long",
-    day: "2-digit",
-  });
+ 
 
   return (
     <div className={styles.singlePostContainer}>
@@ -28,7 +23,7 @@ export default function SinglePostCard({ title, image, category, date }) {
           {" "}
           <h1 className="title">{title}</h1>
         </a>
-        <p className="date">{dateFormatter.format(Date.parse(date))}</p>
+        <p className="date">{dateFormatter(date)}</p>
 
         <a className="title" href="/post/single-post">
           {" "}
