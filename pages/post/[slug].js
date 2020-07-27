@@ -1,69 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout/layout";
-import styles from "../../styles/singlePost.module.css";
 import { FaFacebookF, FaPinterest } from "react-icons/fa";
 import { AiOutlineTwitter } from "react-icons/ai";
 import AuthorSection from "../../components/single-post/authorSection";
 import SuggestionPosts from "../../components/single-post/suggestionPosts";
+import Axios from "axios";
+import dateFormatter from "../../components/utils/dateFormatter";
+import marked from "marked";
+import parser from "html-react-parser";
 
-export default function SinglePost() {
+export default function singlePost({ selectedPost }) {
+  const [Content, setContent] = useState();
+  useEffect(() => {
+    let content = marked(selectedPost[0].content);
+
+    let replacePTag = content.replace(new RegExp('<p>', 'g'), '<p class="bodyText">');
+    
+    let replaceblockTag = replacePTag.replace(new RegExp('<blockquote>', 'g'),"<blockquote class='blockquote' >")
+  
+    let final = parser(replaceblockTag)
+    setContent(final);
+   
+  }, []);
   return (
     <Layout>
+      
       {/* Post Details */}
-      <div className={styles.container}>
-        <div className={styles.singlePostContainer}>
-          <div className={styles.singlePostImgContainer}>
-            <img className={styles.singlePostImg} src="/images/posts/travel2.jpg" />
+      <div className="container">
+        <div className="singlePostContainer">
+          <div className="singlePostImgContainer">
+            <img
+              className="singlePostImg"
+              src={`http://localhost:1337${selectedPost[0].Coverimage[0].url}`}
+            />
           </div>
-          <div className={styles.singlePostText}>
-            <div className={styles.postHeader}>
-              <p className="category">Travel</p>
-              <h1 >Holy heavens in Earth</h1>
-              <p className="date">March 20, 2020</p>
+          <div className="singlePostText">
+            <div className="postHeader">
+              <p className="category">{selectedPost[0].category.Name}</p>
+              <h1>{selectedPost[0].Title}</h1>
+              <p className="date">
+                {dateFormatter(selectedPost[0].created_at)}
+              </p>
             </div>
-            <div className={styles.postContent}>
-              <p className={styles.bodyText}>
-                {" "}
-                Cras vel convallis mi. Sed aliquet mollis erat, ultricies
-                elementum orci vehicula non. Nulla lacinia scel erisque risus
-                quis pulvinar. Nullam nec nibh arcu. Nam libero nisl, convallis
-                at metus at, pretium tincid unt enim. Cras metus orci, volutpat
-                eu tincidunt et, venenatis eu mi. Fusce varius varius tortor vel
-                pellentesque.{" "}
-              </p>
-              <p className={styles.bodyText}>
-                Suspendisse sodales erat est, vitae maximus ligula eleifend
-                vitae. Praesent fringilla, urna eget tincidunt vehicula, urna
-                diam convallis dui, ut tincidunt mi tellus sit amet ante.
-                Maecenas mattis turpis nec ex maximus cursus. Pellentesque
-                pretium erat sit amet feugiat placerat.
-              </p>
-              <h3>Lorem ipsum dolor sit amet</h3>
-              <p className={styles.bodyText}>
-                Suspendisse sodales erat est, vitae maximus ligula eleifend
-                vitae. Praesent fringilla, urna eget tincidunt vehicula, urna
-                diam convallis dui, ut tincidunt mi tellus sit amet ante.
-                Maecenas mattis turpis nec ex maximus cursus. Pellentesque
-                pretium erat sit amet feugiat placerat.
-              </p>{" "}
-              <blockquote className={styles.blockquote}>
-                <p className={styles.bodyText}>
-                  If there is not something in a box. Then it probably means
-                  there is nothing in box. Not sure though. Pass that joint bro.
-                </p>
-                <span>-Gandhi</span>
-              </blockquote>
-              <p className={styles.bodyText}>
-                Suspendisse sodales erat est, vitae maximus ligula eleifend
-                vitae. Praesent fringilla, urna eget tincid unt vehicula, urna
-                diam convallis dui, ut tincidunt mi tellus sit amet ante.
-                Maecenas mattis turpis nec ex maximus cursus. Pellentesque
-                pretium erat sit amet feugiat placerat. Duis in magna ornare,
-                dictum libero sed, viverra tellus. Donec eget aliquet erat. Nunc
-                ac porttitor justo, vitae molestie tortor. Proin laoreet erat ac
-                est pelle ntesque, sit amet pulvinar massa tincidunt.
-              </p>
-              <div className={styles.hl}></div>
+            <div className="postContent">
+              {Content}
+              
               {/* Share social icons */}
               <div className="socialIcons">
                 <p>Share</p>
@@ -81,10 +62,10 @@ export default function SinglePost() {
           </div>
         </div>
         {/* Author Section */}
-    <AuthorSection/>
-     
+        <AuthorSection />
+
         {/* Suggestion Section */}
-    <SuggestionPosts/>
+        <SuggestionPosts />
 
         {/* Comment Section */}
         <div className="postCommentContainer">
@@ -151,8 +132,46 @@ export default function SinglePost() {
       </div>
       <style jsx>
         {`
-     
-        
+          .container {
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          .singlePostContainer {
+            text-align: center;
+            margin: 0 auto;
+            background: #ffff;
+            letter-spacing: 0.5px;
+          }
+
+          .postHeader {
+            padding: 30px 0;
+          }
+          .postContent {
+            text-align: justify;
+            padding: 30px 45px 10px;
+            line-height: 27px;
+          }
+          .bodyText {
+            font-size: 15px;
+          }
+
+          .singlePostImg {
+            width: 100%;
+          }
+          .blockquote {
+            padding: 10px 30px;
+            margin-bottom: 35px;
+            margin-top: 35px;
+            border-left: 4px solid #ec5d5d;
+            background: #eee;
+          }
+
+          .hl {
+            border: 1px solid #e6e6e6;
+            margin-top: 80px;
+          }
+
           .postCommentContainer {
             margin: 35px 0;
             background: #ffff;
@@ -196,16 +215,14 @@ export default function SinglePost() {
           }
 
           @media screen and (max-width: 650px) {
-           
             .bodyText {
               font-size: 13px;
             }
           }
           @media screen and (max-width: 460px) {
-      
             .userImg {
               width: 60px;
-              height:60px;
+              height: 60px;
             }
             .commentReply {
               top: 19px;
@@ -218,4 +235,15 @@ export default function SinglePost() {
   );
 }
 
+export async function getServerSideProps(context) {
+  const { slug } = context.query;
+  const data = await Axios.get("http://localhost:1337/posts");
+  const posts = data.data;
+  const selectedPost = posts.filter((post) => post.slug === slug);
 
+  return {
+    props: {
+      selectedPost,
+    },
+  };
+}

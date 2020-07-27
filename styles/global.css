@@ -1,6 +1,20 @@
 *{
   box-sizing: border-box;
 }
+/* single-post */
+
+.bodyText{
+  font-size: 15px;
+
+}
+.blockquote {
+  padding: 10px 30px;
+  margin-bottom: 35px;
+  margin-top: 35px;
+  border-left: 4px solid #ec5d5d;
+  background: #eee;
+}
+/*end single-post */
 
 body{
     padding: 0;

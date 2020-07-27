@@ -14,7 +14,7 @@ const Home = ({posts,featuredPosts}) => {
 
   return (
     <div className="bodyContainer">
-     {console.log(posts)}
+     {console.log(posts[0].slug)}
       <Head>
         <title>S-blog</title>
         <link rel="icon" href="/favicon.ico" />
@@ -35,6 +35,7 @@ const Home = ({posts,featuredPosts}) => {
                       image={post.Coverimage[0].url}
                       category={post.category.Name}
                       date={post.created_at}
+                      slug={post.slug}
                     />
                   ))
                 ) : (

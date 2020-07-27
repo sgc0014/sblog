@@ -52,7 +52,7 @@ export default function Featured({ featuredPosts }) {
 
       {/* Featured Post */}
       <div className="imagecontainer">
-        <a href="/post/single-post">
+        <a href={`/post/${featuredPosts[index].slug}`}>
           {" "}
           <img
             className="imageSlide "
