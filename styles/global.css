@@ -1,6 +1,9 @@
 *{
   box-sizing: border-box;
 }
+img{
+  object-fit: cover;
+}
 /* single-post */
 
 .bodyText{

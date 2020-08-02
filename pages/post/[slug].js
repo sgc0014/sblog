@@ -12,19 +12,26 @@ import parser from "html-react-parser";
 export default function singlePost({ selectedPost }) {
   const [Content, setContent] = useState();
   useEffect(() => {
+    //convert markdown language to html
     let content = marked(selectedPost[0].content);
+    //add class to p and blockquote tag
+    let replacePTag = content.replace(
+      new RegExp("<p>", "g"),
+      '<p class="bodyText">'
+    );
 
-    let replacePTag = content.replace(new RegExp('<p>', 'g'), '<p class="bodyText">');
-    
-    let replaceblockTag = replacePTag.replace(new RegExp('<blockquote>', 'g'),"<blockquote class='blockquote' >")
-  
-    let final = parser(replaceblockTag)
+    let replaceblockTag = replacePTag.replace(
+      new RegExp("<blockquote>", "g"),
+      "<blockquote class='blockquote' >"
+    );
+
+    //convet string html to html
+    let final = parser(replaceblockTag);
+
     setContent(final);
-   
   }, []);
   return (
     <Layout>
-      
       {/* Post Details */}
       <div className="container">
         <div className="singlePostContainer">
@@ -44,7 +51,7 @@ export default function singlePost({ selectedPost }) {
             </div>
             <div className="postContent">
               {Content}
-              
+
               {/* Share social icons */}
               <div className="socialIcons">
                 <p>Share</p>
@@ -160,7 +167,7 @@ export default function singlePost({ selectedPost }) {
             width: 100%;
           }
           .blockquote {
-            padding: 10px 30px;
+            padding: 10px 13px;
             margin-bottom: 35px;
             margin-top: 35px;
             border-left: 4px solid #ec5d5d;

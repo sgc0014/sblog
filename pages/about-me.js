@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout/layout";
-import {FaFacebookF, FaPinterest} from 'react-icons/fa'
-import {AiOutlineTwitter} from 'react-icons/ai'
+import { FaFacebookF, FaPinterest } from "react-icons/fa";
+import { AiOutlineTwitter } from "react-icons/ai";
 
 function AboutMe() {
   return (
@@ -41,12 +41,18 @@ function AboutMe() {
             </p>
             <span>-Gandhi</span>
           </blockquote>
-          <div className='socialIcons'>
-                <p>Follow me</p>
-                <a className='socialIcon'><FaFacebookF/></a>
-                <a className='socialIcon'><AiOutlineTwitter/></a>
-                <a className='socialIcon'><FaPinterest/></a>
-              </div>
+          <div className="socialIcons">
+            <p>Follow me</p>
+            <a className="socialIcon">
+              <FaFacebookF />
+            </a>
+            <a className="socialIcon">
+              <AiOutlineTwitter />
+            </a>
+            <a className="socialIcon">
+              <FaPinterest />
+            </a>
+          </div>
         </div>
       </div>
       <style jsx>
@@ -68,9 +74,9 @@ function AboutMe() {
             border-left: 4px solid #ec5d5d;
             background: #eee;
           }
-          .header{
+          .header {
             padding: 25px 0;
-                      }
+          }
         `}
       </style>
     </Layout>

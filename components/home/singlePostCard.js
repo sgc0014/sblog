@@ -1,11 +1,8 @@
 import React from "react";
 import Button from "./readMoreButton";
 import styles from "../../styles/singlePostCard.module.css";
-import dateFormatter from '../utils/dateFormatter'
+import dateFormatter from "../utils/dateFormatter";
 export default function SinglePostCard({ title, image, category, date, slug }) {
-  
- 
-
   return (
     <div className={styles.singlePostContainer}>
       <div className={styles.spImgContainer}>

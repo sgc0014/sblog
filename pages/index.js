@@ -8,13 +8,9 @@ import TopCategory from "../components/home/topCategory";
 import Category from "../components/category";
 import Axios from "axios";
 
-const Home = ({posts,featuredPosts}) => {
- 
- 
-
+const Home = ({ posts, featuredPosts }) => {
   return (
     <div className="bodyContainer">
-     {console.log(posts[0].slug)}
       <Head>
         <title>S-blog</title>
         <link rel="icon" href="/favicon.ico" />
@@ -61,13 +57,12 @@ export async function getServerSideProps() {
 
   const posts = data.data;
   const featuredPosts = posts.filter((post) => post.featured === true);
- 
+
   return {
     props: {
       posts,
-      featuredPosts
-      
-    }
+      featuredPosts,
+    },
   };
 }
 

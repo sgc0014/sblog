@@ -4,6 +4,9 @@ import dateFormatter from "../utils/dateFormatter";
 
 export default function Featured({ featuredPosts }) {
   const [index, setIndex] = useState(0);
+  const [singlePostLink, setSinglePostLink] = useState(
+    `/post/${featuredPosts[index].slug}`
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,7 +24,7 @@ export default function Featured({ featuredPosts }) {
       return;
     }
 
-    setIndex(1);
+    setIndex(index + 1);
   };
 
   const handlePrev = () => {
@@ -52,7 +55,7 @@ export default function Featured({ featuredPosts }) {
 
       {/* Featured Post */}
       <div className="imagecontainer">
-        <a href={`/post/${featuredPosts[index].slug}`}>
+        <a href={singlePostLink}>
           {" "}
           <img
             className="imageSlide "
@@ -60,15 +63,17 @@ export default function Featured({ featuredPosts }) {
           />
         </a>
         <div className="infocard">
-          <p className="category">{featuredPosts[0].category.Name}</p>
+          <p className="category">{featuredPosts[index].category.Name}</p>
           <h1 className="featuredTitle">
             {" "}
-            <a href="/post/single-post"> {featuredPosts[index].Title}</a>
+            <a href={singlePostLink}> {featuredPosts[index].Title}</a>
           </h1>
           <p className="date">
             {dateFormatter(featuredPosts[index].created_at)}
           </p>
-          <button className="readMorebtn">Read More</button>
+          <a href={singlePostLink}>
+            <button className="readMorebtn">Read More</button>
+          </a>
         </div>
       </div>
 
@@ -106,15 +111,17 @@ export default function Featured({ featuredPosts }) {
           top: 50%;
           right: 90%;
         }
+        .minusSlide:hover {
+          color: #e411ec;
+        }
 
         .plusSlide {
           position: absolute;
           top: 50%;
           left: 90%;
         }
-        .plusSlide > :hover {
-          background: #ffff;
-          color: black;
+        .plusSlide:hover {
+          color: #e411ec;
         }
         .minusSlide > :hover {
           background: #ffff;
@@ -189,7 +196,7 @@ export default function Featured({ featuredPosts }) {
           .infocard {
             padding: 0px;
             width: 260px;
-            left: 10%;
+            left: 14%;
             height: 164px;
           }
           .featuredTitle {
@@ -208,7 +215,7 @@ export default function Featured({ featuredPosts }) {
           }
           .minusSlide {
             position: absolute;
-            top: 54%;
+            top: 49%;
             right: 90%;
           }
 
